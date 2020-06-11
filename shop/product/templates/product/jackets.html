@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for jacket in jackets %}
+    <div class="card m-2" style="width: 18rem;">
+        <img src="{{ jacket.photo.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ jacket.title}}</h5>
+          <p class="card-text">{{ jacket.size }} размер</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ jacket.price }} сом</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Детали</a>
+          <a href="#" class="card-link">Добавить в корзину</a>
+        </div>
+      </div>
+      {% endfor %}
+{% endblock content %}

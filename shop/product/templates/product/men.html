@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block one %}
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown"></li>
+        <div class="dropdown open">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Категории
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'jacket_url' 'men' %}">Пиджаки</a>
+            <a class="dropdown-item" href="#">Брюки</a>
+            <a class="dropdown-item" href="#">Рубашки</a>
+            <a class="dropdown-item" href="#">Обувь</a>
+            <a class="dropdown-item" href="#">Аксессуары</a>
+          </div>
+        </div>
+    </li>
+</ul>
+{% endblock one %}
+
+{% block content %}
+{% endblock content %}
