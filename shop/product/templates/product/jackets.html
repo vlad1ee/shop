@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block one %}
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown"></li>
+        <div class="dropdown open">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Категории
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'jacket_url' 'men' %}">Пиджаки</a>
+            <a class="dropdown-item" href="{% url 'pants_url' 'men' %}">Брюки</a>
+            <a class="dropdown-item" href="{% url 'shirt_url' 'men' %}">Рубашки</a>
+            <a class="dropdown-item" href="{% url 'footwear_url' 'men' %}">Обувь</a>
+            <a class="dropdown-item" href="{% url 'accessory_url' 'men' %}">Аксессуары</a>
+          </div>
+        </div>
+    </li>
+</ul>
+{% endblock one %}
+
+{% block content %}
+<h1 class="text-center mt-3">Пиджаки</h1>
+    {% for jacket in jackets %}
+    <div class="row justify-content-center">
+        <div class="card m-2" style="width: 18rem;">
+            <img src="{{ jacket.photo.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Наименование: {{ jacket.title}}</h5>
+              <p class="card-text">Размер: {{ jacket.size }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Цена: {{ jacket.price }} сом</li>
+            </ul>
+            <div class="card-body">
+                <a href="#" class="card-link"><button class='btn btn-primary'>Детали</button></a>
+              <a href="#" class="card-link"><button class='btn btn-success'>В корзину</button></a>
+            </div>
+          </div>
+    </div>
+      {% endfor %}
+{% endblock content %}
